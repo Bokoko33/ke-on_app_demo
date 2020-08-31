@@ -1,0 +1,31 @@
+<template>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon icon-tabler icon-tabler-table"
+    width="44"
+    height="44"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    :stroke="stroke"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" />
+    <rect x="4" y="4" width="16" height="16" rx="2" />
+    <line x1="4" y1="10" x2="20" y2="10" />
+    <line x1="10" y1="4" x2="10" y2="20" />
+  </svg>
+</template>
+
+<script>
+export default {
+  name: "IconTable",
+  props: {
+    //線の色
+    stroke: {
+      type: String,
+    },
+  },
+};
+</script>

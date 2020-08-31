@@ -1,10 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import Calendar from "./components/Calendar";
-import RegularTable from "./components/RegularTable";
-import Log from "./components/Log";
-import MyPage from "./components/MyPage";
+import First from "./components/pages/First";
+import Calendar from "./components/pages/Calendar";
+import RegularTable from "./components/pages/RegularTable";
+import Log from "./components/pages/Log";
+import MyPage from "./components/pages/MyPage";
 
 Vue.use(Router);
 
@@ -13,23 +14,28 @@ export default new Router({
   routes: [
     {
       path: "/",
+      name: "first",
+      component: First
+    },
+    {
+      path: "/calendar",
       name: "calendar",
-      component: Calendar,
+      component: Calendar
     },
     {
       path: "/regular-table",
       name: "regular-table",
-      component: RegularTable,
+      component: RegularTable
     },
     {
       path: "/log",
       name: "Log",
-      component: Log,
+      component: Log
     },
     {
       path: "/my-page",
       name: "my-page",
-      component: MyPage,
-    },
-  ],
+      component: MyPage
+    }
+  ]
 });

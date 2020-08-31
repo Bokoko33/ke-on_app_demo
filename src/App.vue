@@ -3,29 +3,20 @@
     <Header />
     <router-view />
     <Footer />
+    <NoPC />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
+import NoPC from "./components/common/NoPC";
 
 export default {
   components: {
     Header,
     Footer,
+    NoPC,
   },
 };
 </script>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-</style>

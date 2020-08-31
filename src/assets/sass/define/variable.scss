@@ -1,0 +1,24 @@
+$color-main: #4b436a;
+$color-sub: #eaae8e;
+$color-black: #333;
+$color-red: #dd6829;
+$color-blue: #4968be;
+$color-gray_1: #afafaf;
+$color-gray_2: #cfcfcf;
+$color-gray_3: #ededed;
+$color-gray_4: #f5f5f5;
+$color-shadow: #e0e0e0;
+
+$height-global-header: 60px;
+$height-global-footer: 70px;
+
+// z-indexのレイヤー
+$z-no-pc: 80;
+$z-first: 70;
+$z-dialog: 60;
+$z-init-modal: 50;
+$z-edit-modal: 40;
+$z-cal-modal: 30;
+$z-global: 20;
+$z-bar: 10;
+$z-pages: 1;
