@@ -78,7 +78,9 @@ export default {
   height: 100vh;
   background-color: white;
   z-index: $z-init-modal;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .full-modal-header {

@@ -13,12 +13,13 @@ $height-global-header: 60px;
 $height-global-footer: 70px;
 
 // z-indexのレイヤー
-$z-no-pc: 80;
-$z-first: 70;
-$z-dialog: 60;
-$z-init-modal: 50;
-$z-edit-modal: 40;
-$z-cal-modal: 30;
+$z-no-pc: 90;
+$z-first: 80;
+$z-dialog: 70;
+$z-init-modal: 60;
+$z-edit-modal: 50;
+$z-cal-modal: 40;
+$z-overlay: 30;
 $z-global: 20;
 $z-bar: 10;
 $z-pages: 1;

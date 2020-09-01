@@ -1,6 +1,7 @@
 <template>
   <transition name="modal" appear>
-    <div class="modal-overlay" @click="$emit('close')">
+    <div class="modal">
+      <div class="modal-overlay" @click="$emit('close')"></div>
       <div class="modal-window">
         <div class="modal-header">{{ headerDate }}</div>
         <div class="modal-tabel">
@@ -126,22 +127,23 @@ $padding-bottom: 40px;
 .modal-overlay {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
   position: fixed;
-  z-index: $z-cal-modal;
   top: 0;
   left: 0;
   background-color: rgba(#000000, 0.3);
+  z-index: $z-overlay;
 }
 
 .modal-window {
   width: 100%;
   height: 85%;
+  position: fixed;
+  top: 10px;
+  left: 0;
   border-radius: 20px;
   margin-top: 5%;
   background-color: white;
+  z-index: $z-cal-modal;
 }
 
 .modal-header {

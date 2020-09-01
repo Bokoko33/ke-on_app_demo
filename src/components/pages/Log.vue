@@ -8,14 +8,14 @@
 import LogItem from "../parts/LogItem";
 export default {
   components: {
-    LogItem
-  }
+    LogItem,
+  },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .log {
   list-style: none;
-  padding: 80px 20px 20px;
+  padding: $height-global-header + 20px 20px $height-global-footer;
 }
 </style>
