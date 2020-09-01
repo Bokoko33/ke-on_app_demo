@@ -48,6 +48,7 @@ export default {
   top: 0;
   left: 0;
   background-color: white;
+  overflow-y: auto;
   z-index: $z-edit-modal;
 }
 .modal-header {

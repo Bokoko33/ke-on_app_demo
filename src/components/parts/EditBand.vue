@@ -94,7 +94,7 @@ export default {
 
 <style lang="scss" scoped>
 .edit-band {
-  padding: $height-global-header 20px 0;
+  padding: $height-global-header 20px 200px;
 }
 
 .edit-band-name {
