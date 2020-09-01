@@ -15,28 +15,35 @@
 import IconLeft from "../icons/IconLeft";
 import EditName from "../parts/EditName";
 import EditBand from "../parts/EditBand";
+import { disableBodyScroll, clearAllBodyScrollLocks } from "body-scroll-lock";
 
 export default {
   props: {
     modalType: {
-      type: String,
+      type: String
     },
     bandObj: {
-      type: Object,
-    },
+      type: Object
+    }
+  },
+  mounted() {
+    disableBodyScroll();
+  },
+  beforeDestroy() {
+    clearAllBodyScrollLocks();
   },
   components: {
     IconLeft,
     EditName,
-    EditBand,
+    EditBand
   },
   computed: {
     title() {
       if (this.modalType === "name") return "ニックネーム編集";
       else if (this.modalType === "band") return "所属バンド編集";
       else return "ERROR";
-    },
-  },
+    }
+  }
 };
 </script>
 

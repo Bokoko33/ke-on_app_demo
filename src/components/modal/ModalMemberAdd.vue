@@ -5,7 +5,7 @@
         <IconLeft class="icon-arrow" />
       </div>
       <p>メンバーを追加</p>
-      <p class="icon-done" @click="$emit('done',selectedList)">完了</p>
+      <p class="icon-done" @click="$emit('done', selectedList)">完了</p>
     </div>
     <div class="modal-tab">
       <input class="modal-tab-search" type="text" placeholder="名前で検索" />
@@ -20,11 +20,7 @@
     </div>
     <ul class="modal-member-list">
       <li class="modal-member-item" v-for="(user, index) in filteredUsers" :key="index">
-        <MemberListItem
-          :user="user"
-          :selected="selected(user)"
-          @handleList="handleList($event,user)"
-        />
+        <MemberListItem :user="user" :selected="selected(user)" @handleList="handleList($event, user)" />
       </li>
     </ul>
   </div>
@@ -40,49 +36,50 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-      selectedList: [],
+      selectedList: []
     };
   },
   props: {
     currentMember: {
-      type: Array,
+      type: Array
     },
     originMember: {
-      type: Array,
-    },
+      type: Array
+    }
   },
   components: {
     IconLeft,
     MemberListItem,
-    SelectedUser,
+    SelectedUser
   },
+
   computed: {
     ...mapState({
-      usersAll: (state) => state.usersAll,
+      usersAll: state => state.usersAll
     }),
     filteredUsers() {
       //バンドに所属していないユーザーにフィルタリング
 
       //originMemberからidだけを抜き出す
-      const idListMember = this.originMember.map((e) => e.id);
+      const idListMember = this.originMember.map(e => e.id);
 
       //このバンドに所属していないユーザーのみにフィルタリング
-      const newList = this.usersAll.filter((e) => idListMember.indexOf(e.id) == -1);
+      const newList = this.usersAll.filter(e => idListMember.indexOf(e.id) == -1);
 
       return newList;
     },
     selected() {
       //selectedListに入っているかどうかで選択中かを判断（バツボタンでも消せるように）
-      return function (user) {
-        const idListMember = this.selectedList.map((e) => e.id);
+      return function(user) {
+        const idListMember = this.selectedList.map(e => e.id);
         return idListMember.indexOf(user.id) != -1;
       };
-    },
+    }
   },
   created() {
     this.selectedList = [];
-    const idListMember = this.originMember.map((e) => e.id);
-    this.selectedList = this.currentMember.filter((e) => idListMember.indexOf(e.id) == -1);
+    const idListMember = this.originMember.map(e => e.id);
+    this.selectedList = this.currentMember.filter(e => idListMember.indexOf(e.id) == -1);
     console.log(this.currentMember);
     console.log(this.selectedList);
   },
@@ -92,25 +89,27 @@ export default {
       if ($event) {
         this.selectedList.push(user);
       } else {
-        this.selectedList = this.selectedList.filter((e) => e.id != user.id);
+        this.selectedList = this.selectedList.filter(e => e.id != user.id);
       }
     },
     removeList(user) {
-      this.selectedList = this.selectedList.filter((e) => e.id != user.id);
-    },
-  },
+      this.selectedList = this.selectedList.filter(e => e.id != user.id);
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .modal {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   top: 0;
   left: 0;
+  bottom: 0;
+  overflow-y: auto;
   background-color: white;
-  z-index: $z-edit-modal;
+  z-index: $z-member-add-modal;
 }
 .modal-header {
   position: fixed;
@@ -121,7 +120,7 @@ export default {
   width: 100%;
   height: $height-global-header;
   box-shadow: 0 0 6px $color-shadow;
-  z-index: $z-edit-modal + 20;
+  z-index: $z-member-add-modal + 20;
 }
 
 .icon-arrow-wrap {
@@ -151,7 +150,7 @@ export default {
   padding: $height-global-header 20px 14px;
   background-color: $color-gray_4;
   box-shadow: 0 0 6px $color-shadow;
-  z-index: $z-edit-modal + 10;
+  z-index: $z-member-add-modal + 10;
 }
 
 .modal-tab-search {

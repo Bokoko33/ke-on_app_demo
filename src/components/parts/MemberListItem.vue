@@ -41,6 +41,7 @@ export default {
   border-bottom: solid 1px $color-gray_2;
   padding: 16px 0;
   font-size: 16px;
+  background-color: white;
 }
 
 .member-icon {
