@@ -1,9 +1,7 @@
 <template>
   <div class="regular">
     <ol class="time-bar">
-      <li class="time-bar-item" v-for="(time, index) in times" :key="index">
-        {{ time }}
-      </li>
+      <li class="time-bar-item" v-for="(time, index) in times" :key="index">{{ time }}</li>
     </ol>
     <ul class="regular-table">
       <li class="day-list" v-for="(band, index) in bandData" :key="index">
@@ -13,12 +11,13 @@
             saturday: index == 6,
             'has-border-short': index != 6
           }"
-          >{{ band.day }}</small
-        >
+        >{{ band.day }}</small>
         <ul class="band-list" :class="{ 'has-border-right': index != 6 }">
-          <li class="band-list-item" v-for="(bandName, index) in band.bands" :key="index">
-            {{ filteredBandName(bandName) }}
-          </li>
+          <li
+            class="band-list-item"
+            v-for="(bandName, index) in band.bands"
+            :key="index"
+          >{{ filteredBandName(bandName) }}</li>
         </ul>
       </li>
     </ul>
@@ -34,44 +33,44 @@ export default {
       bandData: [
         {
           day: "日",
-          bands: ["よん", "", "未定", "", "bremen", "", "Man 2 Bithcers", "", "AGOHIGE", "", "somewhat", ""]
+          bands: ["よん", "", "未定", "", "bremen", "", "Man 2 Bithcers", "", "AGOHIGE", "", "somewhat", ""],
         },
         {
           day: "月",
-          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "牛タンタン", "", "Tempora r y", ""]
+          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "牛タンタン", "", "Tempora r y", ""],
         },
         {
           day: "火",
-          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "flower children", "PR4YERs", "こんぺいとう", ""]
+          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "flower children", "PR4YERs", "こんぺいとう", ""],
         },
         {
           day: "水",
-          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "LAMP IN TERREN", "", "Esprimo", ""]
+          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "LAMP IN TERREN", "", "Esprimo", ""],
         },
         {
           day: "木",
-          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "マルハチ", "", "えんぷてい", "シンヤワカナ"]
+          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "マルハチ", "", "えんぷてい", "バンドしよ"],
         },
         {
           day: "金",
-          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "scarlet umber", "髭男", "Snit Nit", "おつも"]
+          bands: ["_", "_", "_", "_", "_", "_", "_", "_", "scarlet umber", "髭男", "Snit Nit", "おつも"],
         },
         {
           day: "土",
-          bands: ["KABE-BOON", "", "Yeli", "", "", "", "はるはる", "", "かまぼこ", "Hakubi", "かしま", ""]
-        }
-      ]
+          bands: ["KABE-BOON", "", "Yeli", "", "", "", "はるはる", "", "かまぼこ", "Hakubi", "かしま", ""],
+        },
+      ],
     };
   },
   computed: {
     filteredBandName() {
-      return function(bandName) {
+      return function (bandName) {
         if (bandName === "") return "（空）";
         else if (bandName === "_") return "ー";
         else return bandName;
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
