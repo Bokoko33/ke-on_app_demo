@@ -289,6 +289,9 @@ export default {
     width: 16px;
     position: absolute;
     bottom: 7px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
   }
 }
 
