@@ -486,7 +486,7 @@ export default new Vuex.Store({
     },
     createLog(state, { user, content, date }) {
       const log = { user: user, content: content, date: date };
-      state.logs.push(log);
+      state.logs.unshift(log);
     },
     setBandInfo(state, { id, bandName, member }) {
       const band = state.user.bands.find(e => e.id == id);
