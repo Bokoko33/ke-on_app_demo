@@ -34,7 +34,7 @@
 
 .first-link {
   display: block;
-  margin-top: 160px;
+  margin-top: 90px;
   font-size: 18px;
   color: $color-sub;
 }

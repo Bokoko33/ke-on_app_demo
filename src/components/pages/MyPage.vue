@@ -88,7 +88,7 @@ export default {
 
 <style lang="scss" scoped>
 .my-page {
-  padding-top: 60px;
+  padding: $height-global-header 0 200px;
 }
 
 .my-page-top {
