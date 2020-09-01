@@ -1,19 +1,20 @@
 <template>
-  <button :class="{ purpul: color === 'main', orange: color === 'sub' }" @touchstart.prevent="$emit('save')">
-    {{ label }}
-  </button>
+  <button
+    :class="{ purpul: color === 'main', orange: color === 'sub' }"
+    @click.prevent="$emit('save')"
+  >{{ label }}</button>
 </template>
 
 <script>
 export default {
   props: {
     label: {
-      type: String
+      type: String,
     },
     color: {
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 };
 </script>
 

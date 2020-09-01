@@ -1,11 +1,11 @@
 <template>
   <div class="cal">
     <div class="cal-header">
-      <div class="cal-header-arrow" v-on:touchstart="setLastMonth()">
+      <div class="cal-header-arrow" @click="setLastMonth()">
         <IconLeft v-if="month != 4" class="arrow-icon" />
       </div>
       <p class="selected-month">{{ year }}年{{ month }}月</p>
-      <div class="cal-header-arrow" v-on:touchstart="setNextMonth()">
+      <div class="cal-header-arrow" @click="setNextMonth()">
         <IconRight v-if="month != 3" class="arrow-icon" />
       </div>
     </div>
@@ -19,7 +19,7 @@
             class="cal-day"
             v-for="(dayNum, index) in weekData"
             :key="index"
-            @:touchstart="dateClick(dayNum)"
+            @click="dateClick(dayNum)"
           >
             <p
               class="day-num"
@@ -32,7 +32,7 @@
                 },
                 checkDayState(dayNum)
               ]"
-              @touchstart="openDayModal(year, month, dayNum, index)"
+              @click="openDayModal(year, month, dayNum, index)"
             >{{ dayNum }}</p>
           </td>
         </tr>

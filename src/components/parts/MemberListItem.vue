@@ -1,5 +1,5 @@
 <template>
-  <div class="member-list-item" @touchstart="switchSelected()">
+  <div class="member-list-item" @click="switchSelected()">
     <div class="member-icon"></div>
     {{ user.name }}
     <IconCheck class="icon-check" v-if="selected" />

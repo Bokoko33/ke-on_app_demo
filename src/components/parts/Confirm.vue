@@ -8,7 +8,7 @@
       <label class="confirm-band-label" for="bands">予約バンド</label>
       <p class="confirm-band-name">{{ band }}</p>
     </div>
-    <p class="confirm-delete" @touchstart="deleteReserve()">予約を削除する</p>
+    <p class="confirm-delete" @click="deleteReserve()">予約を削除する</p>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="selected-user">
-    <div class="selected-icon" @touchstart="$emit('remove')">
+    <div class="selected-icon" @click="$emit('remove')">
       <div class="icon-close-wrap">
         <IconClose class="icon-close" />
       </div>

@@ -7,7 +7,7 @@
     <div class="edit-band-member">
       <small class="edit-band-label">メンバー</small>
       <ul class="edit-band-member-list">
-        <li class="edit-band-member-list-item" @touchstart="openMemberAdd">
+        <li class="edit-band-member-list-item" @click="openMemberAdd">
           <IconPlus class="icon-plus" />メンバーを追加する
         </li>
         <li
@@ -21,7 +21,7 @@
       </ul>
     </div>
     <Button :label="'保存する'" :color="'main'" @save="saveBandInfo()" />
-    <p class="edit-band-leave" @touchstart="leaveBand()">バンドを脱退する</p>
+    <p class="edit-band-leave" @click="leaveBand()">バンドを脱退する</p>
     <ModalMemberAdd
       v-if="openModal"
       :currentMember="currentMember"

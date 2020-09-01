@@ -1,7 +1,7 @@
 <template>
   <div class="full-modal">
     <div class="full-modal-header">
-      <div class="icon-close-wrap" @touchstart="$emit('close')">
+      <div class="icon-close-wrap" @click="$emit('close')">
         <IconClose />
       </div>
       {{ title }}

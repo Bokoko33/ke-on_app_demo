@@ -1,6 +1,6 @@
 <template>
   <transition name="modal" appear>
-    <div class="modal-overlay" @touchstart.self="$emit('close')">
+    <div class="modal-overlay" @click="$emit('close')">
       <div class="modal-window">
         <div class="modal-header">{{ headerDate }}</div>
         <div class="modal-tabel">
@@ -12,7 +12,7 @@
               <div
                 v-if="band === ''"
                 class="modal-band-empty"
-                @touchstart="openFullModal('reserve', index)"
+                @click="openFullModal('reserve', index)"
               >
                 <IconPlus class="icon-plus" />
               </div>
@@ -20,7 +20,7 @@
               <div
                 v-else-if="isMyBand(band)"
                 class="modal-band-mine"
-                @touchstart="openFullModal('confirm', index)"
+                @click="openFullModal('confirm', index)"
               >
                 {{ band }}
                 <div class="icon-edit-wrap">

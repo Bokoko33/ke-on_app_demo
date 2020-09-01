@@ -1,11 +1,11 @@
 <template>
   <div class="modal">
     <div class="modal-header">
-      <div class="icon-arrow-wrap" @touchstart="$emit('close')">
+      <div class="icon-arrow-wrap" @click="$emit('close')">
         <IconLeft class="icon-arrow" />
       </div>
       <p>メンバーを追加</p>
-      <p class="icon-done" @touchstart="$emit('done',selectedList)">完了</p>
+      <p class="icon-done" @click="$emit('done',selectedList)">完了</p>
     </div>
     <div class="modal-tab">
       <input class="modal-tab-search" type="text" placeholder="名前で検索" />

@@ -8,7 +8,7 @@
     <div class="my-page-details">
       <div class="my-nickname">
         <small class="my-nickname-label">ニックネーム</small>
-        <p class="my-nickname-text" @touchstart="openEditModal('name', -1)">
+        <p class="my-nickname-text" @click="openEditModal('name', -1)">
           {{ nickname }}
           <IconRight class="icon-arrow" />
         </p>
@@ -22,7 +22,7 @@
         </small>
         <ul class="my-bands-list">
           <li class="my-band" v-for="(band, index) in bands" :key="index">
-            <p class="my-band-name" @touchstart="openEditModal('band', index)">
+            <p class="my-band-name" @click="openEditModal('band', index)">
               {{ band.name }}
               <IconRight class="icon-arrow" />
             </p>
